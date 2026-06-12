@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Dashboard</title>
+  <script>
+  /* injected by build_dashboard() */
+  const DATA = {"meta": {"strategy_id": "value_core", "strategy_name": "Value Core", "base_currency": "USD", "initial_capital": 100000.0, "inception_date": "2026-06-10", "as_of_date": "2026-06-10", "generated_at": "2026-06-11T13:04:41Z", "benchmark": {"symbol": "VOO", "cash_weight": 0.1, "return_basis": "adjusted_close_total_return", "note": "Counterfactual benchmark: 90% VOO (Yahoo Adjusted Close, total return) + 10% cash (no interest), same 100,000 USD initial capital and inception date as the portfolio."}, "report_path": "runs/value_core/weekly_reports/2026-06-10_weekly_report.md"}, "kpi": {"snapshot_date": "2026-06-10", "total_portfolio_value": 99983.43163009644, "positions_market_value": 88217.97163009644, "cash_balance": 11765.460000000003, "cumulative_return": -0.0001656836990355805, "benchmark_return": 0.0, "active_return": -0.0001656836990355805, "realized_pnl": 0.0, "unrealized_pnl": -16.5683699035435, "weekly_return": null, "weekly_active_return": null}, "nav_series": {"return_basis": "adjusted_close_total_return", "points": [{"date": "2026-06-10", "portfolio_value": 99983.43163009644, "portfolio_nav": 0.9998343163009644, "benchmark_value": 100000.0, "benchmark_nav": 1.0, "weekly_return": null, "weekly_benchmark_return": null}]}, "allocation": {"baseline_date": "2026-06-10", "rows": [{"symbol": "VOO", "asset_type": "ETF", "role": "core", "actual_weight": 0.5946986557744673, "target_weight": 0.6, "baseline_weight": 0.6, "drift_pp": -0.5301344225532634, "review_band_pp": 5.0, "hard_band_pp": 8.0, "drift_status": "ok"}, {"symbol": "PEJ", "asset_type": "ETF", "role": "watch_satellite", "actual_weight": 0.029967606783652633, "target_weight": 0.03, "baseline_weight": 0.03, "drift_pp": -0.003239321634736572, "review_band_pp": 2.0, "hard_band_pp": 4.0, "drift_status": "ok"}, {"symbol": "XLP", "asset_type": "ETF", "role": "satellite", "actual_weight": 0.049490901251603596, "target_weight": 0.05, "baseline_weight": 0.05, "drift_pp": -0.050909874839640684, "review_band_pp": 3.0, "hard_band_pp": 5.0, "drift_status": "ok"}, {"symbol": "LRLCY", "asset_type": "STOCK", "role": "watch_satellite", "actual_weight": 0.0097377136153973, "target_weight": 0.01, "baseline_weight": 0.01, "drift_pp": -0.026228638460270084, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "PG", "asset_type": "STOCK", "role": "watch_satellite", "actual_weight": 0.008955583830877217, "target_weight": 0.01, "baseline_weight": 0.01, "drift_pp": -0.1044416169122783, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "VHT", "asset_type": "ETF", "role": "satellite", "actual_weight": 0.0483917152281473, "target_weight": 0.05, "baseline_weight": 0.05, "drift_pp": -0.16082847718527013, "review_band_pp": 3.0, "hard_band_pp": 5.0, "drift_status": "ok"}, {"symbol": "TMO", "asset_type": "STOCK", "role": "satellite", "actual_weight": 0.004830100195624936, "target_weight": 0.008333, "baseline_weight": 0.008333, "drift_pp": -0.3502899804375064, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "DHR", "asset_type": "STOCK", "role": "satellite", "actual_weight": 0.0073812229483214845, "target_weight": 0.008333, "baseline_weight": 0.008333, "drift_pp": -0.09517770516785157, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "A", "asset_type": "STOCK", "role": "satellite", "actual_weight": 0.00795791853400043, "target_weight": 0.008333, "baseline_weight": 0.008333, "drift_pp": -0.037508146599956986, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "IQV", "asset_type": "STOCK", "role": "satellite", "actual_weight": 0.007273404791641712, "target_weight": 0.008333, "baseline_weight": 0.008333, "drift_pp": -0.10595952083582881, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "LH", "asset_type": "STOCK", "role": "satellite", "actual_weight": 0.00804523311046572, "target_weight": 0.008333, "baseline_weight": 0.008333, "drift_pp": -0.028776688953427963, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "DGX", "asset_type": "STOCK", "role": "satellite", "actual_weight": 0.008135747985234677, "target_weight": 0.008333, "baseline_weight": 0.008333, "drift_pp": -0.019725201476532284, "review_band_pp": 1.0, "hard_band_pp": 2.0, "drift_status": "ok"}, {"symbol": "XLF", "asset_type": "ETF", "role": "satellite", "actual_weight": 0.029841594961639146, "target_weight": 0.03, "baseline_weight": 0.03, "drift_pp": -0.015840503836085304, "review_band_pp": 2.0, "hard_band_pp": 4.0, "drift_status": "ok"}, {"symbol": "KCE", "asset_type": "ETF", "role": "watch_satellite", "actual_weight": 0.01966575829557875, "target_weight": 0.02, "baseline_weight": 0.02, "drift_pp": -0.03342417044212495, "review_band_pp": 2.0, "hard_band_pp": 4.0, "drift_status": "ok"}, {"symbol": "MLPX", "asset_type": "ETF", "role": "watch_satellite", "actual_weight": 0.02989295326335302, "target_weight": 0.03, "baseline_weight": 0.03, "drift_pp": -0.010704673664697906, "review_band_pp": 2.0, "hard_band_pp": 4.0, "drift_status": "ok"}, {"symbol": "ITA", "asset_type": "ETF", "role": "watch_satellite", "actual_weight": 0.018059792750376072, "target_weight": 0.02, "baseline_weight": 0.02, "drift_pp": -0.19402072496239287, "review_band_pp": 2.0, "hard_band_pp": 4.0, "drift_status": "ok"}, {"symbol": "CASH", "asset_type": "CASH", "role": "cash", "actual_weight": 0.11767409667961858, "target_weight": 0.100002, "baseline_weight": 0.100002, "drift_pp": 1.767209667961858, "review_band_pp": 5.0, "hard_band_pp": 8.0, "drift_status": "ok"}]}, "positions": [{"symbol": "VOO", "asset_type": "ETF", "quantity": 89.0, "average_cost": 668.1012359550562, "cost_basis": 59461.009999999995, "price_date": "2026-06-10", "latest_price": 668.0900268554688, "market_value": 59460.01239013672, "actual_weight": 0.5946986557744673, "unrealized_pnl": -0.9976098632760113, "realized_pnl": 0.0}, {"symbol": "XLP", "asset_type": "ETF", "quantity": 58.0, "average_cost": 85.33724137931034, "cost_basis": 4949.5599999999995, "price_date": "2026-06-10", "latest_price": 85.31500244140625, "market_value": 4948.2701416015625, "actual_weight": 0.049490901251603596, "unrealized_pnl": -1.2898583984369907, "realized_pnl": 0.0}, {"symbol": "VHT", "asset_type": "ETF", "quantity": 17.0, "average_cost": 284.6688235294118, "cost_basis": 4839.37, "price_date": "2026-06-10", "latest_price": 284.6099853515625, "market_value": 4838.3697509765625, "actual_weight": 0.0483917152281473, "unrealized_pnl": -1.0002490234373909, "realized_pnl": 0.0}, {"symbol": "PEJ", "asset_type": "ETF", "quantity": 47.0, "average_cost": 63.77127659574468, "cost_basis": 2997.25, "price_date": "2026-06-10", "latest_price": 63.750301361083984, "market_value": 2996.2641639709473, "actual_weight": 0.029967606783652633, "unrealized_pnl": -0.9858360290527344, "realized_pnl": 0.0}, {"symbol": "MLPX", "asset_type": "ETF", "quantity": 40.0, "average_cost": 74.745, "cost_basis": 2989.8, "price_date": "2026-06-10", "latest_price": 74.72000122070312, "market_value": 2988.800048828125, "actual_weight": 0.02989295326335302, "unrealized_pnl": -0.9999511718751819, "realized_pnl": 0.0}, {"symbol": "XLF", "asset_type": "ETF", "quantity": 57.0, "average_cost": 52.367543859649125, "cost_basis": 2984.9500000000003, "price_date": "2026-06-10", "latest_price": 52.345001220703125, "market_value": 2983.665069580078, "actual_weight": 0.029841594961639146, "unrealized_pnl": -1.2849304199221478, "realized_pnl": 0.0}, {"symbol": "KCE", "asset_type": "ETF", "quantity": 13.0, "average_cost": 151.32692307692307, "cost_basis": 1967.2499999999998, "price_date": "2026-06-10", "latest_price": 151.25, "market_value": 1966.25, "actual_weight": 0.01966575829557875, "unrealized_pnl": -0.9999999999997726, "realized_pnl": 0.0}, {"symbol": "ITA", "asset_type": "ETF", "quantity": 8.0, "average_cost": 225.835, "cost_basis": 1806.68, "price_date": "2026-06-10", "latest_price": 225.7100067138672, "market_value": 1805.6800537109375, "actual_weight": 0.018059792750376072, "unrealized_pnl": -0.9999462890625637, "realized_pnl": 0.0}, {"symbol": "LRLCY", "asset_type": "STOCK", "quantity": 11.0, "average_cost": 88.6009090909091, "cost_basis": 974.6100000000001, "price_date": "2026-06-10", "latest_price": 88.51000213623047, "market_value": 973.6100234985352, "actual_weight": 0.0097377136153973, "unrealized_pnl": -0.9999765014649711, "realized_pnl": 0.0}, {"symbol": "PG", "asset_type": "STOCK", "quantity": 6.0, "average_cost": 149.40666666666667, "cost_basis": 896.44, "price_date": "2026-06-10", "latest_price": 149.23500061035156, "market_value": 895.4100036621094, "actual_weight": 0.008955583830877217, "unrealized_pnl": -1.0299963378906796, "realized_pnl": 0.0}, {"symbol": "DGX", "asset_type": "STOCK", "quantity": 4.0, "average_cost": 203.61, "cost_basis": 814.44, "price_date": "2026-06-10", "latest_price": 203.36000061035156, "market_value": 813.4400024414062, "actual_weight": 0.008135747985234677, "unrealized_pnl": -0.9999975585938046, "realized_pnl": 0.0}, {"symbol": "LH", "asset_type": "STOCK", "quantity": 3.0, "average_cost": 268.4633333333333, "cost_basis": 805.3899999999999, "price_date": "2026-06-10", "latest_price": 268.1300048828125, "market_value": 804.3900146484375, "actual_weight": 0.00804523311046572, "unrealized_pnl": -0.9999853515623727, "realized_pnl": 0.0}, {"symbol": "A", "asset_type": "STOCK", "quantity": 6.0, "average_cost": 132.77666666666667, "cost_basis": 796.6600000000001, "price_date": "2026-06-10", "latest_price": 132.61000061035156, "market_value": 795.6600036621094, "actual_weight": 0.00795791853400043, "unrealized_pnl": -0.9999963378907069, "realized_pnl": 0.0}, {"symbol": "DHR", "asset_type": "STOCK", "quantity": 4.0, "average_cost": 184.75, "cost_basis": 739.0, "price_date": "2026-06-10", "latest_price": 184.5, "market_value": 738.0, "actual_weight": 0.0073812229483214845, "unrealized_pnl": -1.0, "realized_pnl": 0.0}, {"symbol": "IQV", "asset_type": "STOCK", "quantity": 4.0, "average_cost": 182.05, "cost_basis": 728.2, "price_date": "2026-06-10", "latest_price": 181.80499267578125, "market_value": 727.219970703125, "actual_weight": 0.007273404791641712, "unrealized_pnl": -0.9800292968750455, "realized_pnl": 0.0}, {"symbol": "TMO", "asset_type": "STOCK", "quantity": 1.0, "average_cost": 483.93, "cost_basis": 483.93, "price_date": "2026-06-10", "latest_price": 482.92999267578125, "market_value": 482.92999267578125, "actual_weight": 0.004830100195624936, "unrealized_pnl": -1.0000073242187568, "realized_pnl": 0.0}], "transactions": [{"transaction_id": 1, "trade_date": "2026-06-10", "symbol": "VOO", "asset_type": "ETF", "side": "BUY", "quantity": 89.0, "price": 668.09, "commission": 1.0, "fees": 0.0, "net_amount": -59461.01, "reason_category": "initial_core_allocation", "reason_memo": "Core S&P 500 beta; 100% of Core sleeve"}, {"transaction_id": 2, "trade_date": "2026-06-10", "symbol": "PEJ", "asset_type": "ETF", "side": "BUY", "quantity": 47.0, "price": 63.75, "commission": 1.0, "fees": 0.0, "net_amount": -2997.25, "reason_category": "sector_tilt", "reason_memo": "Consumer satellite 30%: travel/hotels/experience consumption observation"}, {"transaction_id": 3, "trade_date": "2026-06-10", "symbol": "XLP", "asset_type": "ETF", "side": "BUY", "quantity": 58.0, "price": 85.32, "commission": 1.0, "fees": 0.0, "net_amount": -4949.5599999999995, "reason_category": "sector_tilt", "reason_memo": "Consumer satellite 50%: consumer staples defensive sleeve"}, {"transaction_id": 4, "trade_date": "2026-06-10", "symbol": "LRLCY", "asset_type": "STOCK", "side": "BUY", "quantity": 11.0, "price": 88.51, "commission": 1.0, "fees": 0.0, "net_amount": -974.61, "reason_category": "sector_tilt", "reason_memo": "Consumer satellite 10%: L'Oreal OTC ADR (1 ADR = 1/5 ordinary share, USD), R&D-driven global beauty core observation"}, {"transaction_id": 5, "trade_date": "2026-06-10", "symbol": "PG", "asset_type": "STOCK", "side": "BUY", "quantity": 6.0, "price": 149.24, "commission": 1.0, "fees": 0.0, "net_amount": -896.44, "reason_category": "sector_tilt", "reason_memo": "Consumer satellite 10%: R&D-driven consumer staples / beauty-adjacent defensive stock"}, {"transaction_id": 6, "trade_date": "2026-06-10", "symbol": "VHT", "asset_type": "ETF", "side": "BUY", "quantity": 17.0, "price": 284.61, "commission": 1.0, "fees": 0.0, "net_amount": -4839.37, "reason_category": "sector_tilt", "reason_memo": "Healthcare satellite 50%: broad healthcare beta, high diversification"}, {"transaction_id": 7, "trade_date": "2026-06-10", "symbol": "TMO", "asset_type": "STOCK", "side": "BUY", "quantity": 1.0, "price": 482.93, "commission": 1.0, "fees": 0.0, "net_amount": -483.93, "reason_category": "sector_tilt", "reason_memo": "Healthcare infrastructure basket (equal weight, 6 names, 5% total)"}, {"transaction_id": 8, "trade_date": "2026-06-10", "symbol": "DHR", "asset_type": "STOCK", "side": "BUY", "quantity": 4.0, "price": 184.5, "commission": 1.0, "fees": 0.0, "net_amount": -739.0, "reason_category": "sector_tilt", "reason_memo": "Healthcare infrastructure basket (equal weight, 6 names, 5% total)"}, {"transaction_id": 9, "trade_date": "2026-06-10", "symbol": "A", "asset_type": "STOCK", "side": "BUY", "quantity": 6.0, "price": 132.61, "commission": 1.0, "fees": 0.0, "net_amount": -796.6600000000001, "reason_category": "sector_tilt", "reason_memo": "Healthcare infrastructure basket (equal weight, 6 names, 5% total)"}, {"transaction_id": 10, "trade_date": "2026-06-10", "symbol": "IQV", "asset_type": "STOCK", "side": "BUY", "quantity": 4.0, "price": 181.8, "commission": 1.0, "fees": 0.0, "net_amount": -728.2, "reason_category": "sector_tilt", "reason_memo": "Healthcare infrastructure basket (equal weight, 6 names, 5% total)"}, {"transaction_id": 11, "trade_date": "2026-06-10", "symbol": "LH", "asset_type": "STOCK", "side": "BUY", "quantity": 3.0, "price": 268.13, "commission": 1.0, "fees": 0.0, "net_amount": -805.39, "reason_category": "sector_tilt", "reason_memo": "Healthcare infrastructure basket (equal weight, 6 names, 5% total)"}, {"transaction_id": 12, "trade_date": "2026-06-10", "symbol": "DGX", "asset_type": "STOCK", "side": "BUY", "quantity": 4.0, "price": 203.36, "commission": 1.0, "fees": 0.0, "net_amount": -814.44, "reason_category": "sector_tilt", "reason_memo": "Healthcare infrastructure basket (equal weight, 6 names, 5% total)"}, {"transaction_id": 13, "trade_date": "2026-06-10", "symbol": "XLF", "asset_type": "ETF", "side": "BUY", "quantity": 57.0, "price": 52.35, "commission": 1.0, "fees": 0.0, "net_amount": -2984.9500000000003, "reason_category": "sector_tilt", "reason_memo": "Financials satellite 60%: US large-cap financials beta"}, {"transaction_id": 14, "trade_date": "2026-06-10", "symbol": "KCE", "asset_type": "ETF", "side": "BUY", "quantity": 13.0, "price": 151.25, "commission": 1.0, "fees": 0.0, "net_amount": -1967.25, "reason_category": "sector_tilt", "reason_memo": "Financials satellite 40%: capital markets / exchanges / investment banks / asset managers observation"}, {"transaction_id": 15, "trade_date": "2026-06-10", "symbol": "MLPX", "asset_type": "ETF", "side": "BUY", "quantity": 40.0, "price": 74.72, "commission": 1.0, "fees": 0.0, "net_amount": -2989.8, "reason_category": "sector_tilt", "reason_memo": "Energy/LNG satellite 100%: midstream energy / LNG / pipeline infrastructure"}, {"transaction_id": 16, "trade_date": "2026-06-10", "symbol": "ITA", "asset_type": "ETF", "side": "BUY", "quantity": 8.0, "price": 225.71, "commission": 1.0, "fees": 0.0, "net_amount": -1806.68, "reason_category": "sector_tilt", "reason_memo": "Defense/aerospace satellite 100%: geopolitical risk + US industrial advantage observation"}]};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+
+    /* ── Header ── */
+    .page-header { margin-bottom: 20px; }
+    .page-title  { font-size: 20px; font-weight: 700; }
+    .page-meta   { font-size: 12px; color: #666; margin-top: 4px; }
+
+    /* ── KPI grid ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .kpi-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .kpi-label {
+      font-size: 11px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .kpi-value { font-size: 20px; font-weight: 700; line-height: 1.2; }
+    .kpi-sub   { font-size: 11px; color: #888; margin-top: 6px; }
+
+    /* ── Section card ── */
+    .section {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+    .section-subtitle { font-size: 12px; color: #999; font-weight: 400; }
+
+    /* ── Chart pair layout ── */
+    .chart-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .chart-col-title { font-size: 12px; color: #888; margin-bottom: 6px; }
+    .echart { width: 100%; }
+
+    /* ── NAV single-point ── */
+    .nav-notice { font-size: 13px; color: #666; padding: 6px 0 10px; }
+    .nav-sp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .nav-sp-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 14px 16px;
+    }
+    .nav-sp-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+    .nav-sp-val   { font-size: 22px; font-weight: 700; }
+    .nav-sp-sub   { font-size: 12px; color: #888; margin-top: 4px; }
+    .nav-sp-diff  { font-size: 14px; font-weight: 600; padding-top: 6px; }
+
+    /* ── Positions table ── */
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      min-width: 720px;
+    }
+    thead th {
+      text-align: right;
+      padding: 6px 8px;
+      border-bottom: 2px solid #e0e0e0;
+      font-size: 11px;
+      font-weight: 600;
+      color: #666;
+      white-space: nowrap;
+    }
+    thead th.left { text-align: left; }
+    tbody td {
+      text-align: right;
+      padding: 5px 8px;
+      border-bottom: 1px solid #f2f2f2;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    tbody td.left { text-align: left; }
+    tbody tr:hover td { background: #fafafa; }
+    tfoot td {
+      text-align: right;
+      padding: 6px 8px;
+      font-weight: 700;
+      border-top: 2px solid #ddd;
+      background: #f8f8f8;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+    tfoot td.left { text-align: left; }
+    .stale-label { color: #e65100; font-size: 11px; display: block; }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .tag-etf   { background: #e3f2fd; color: #1565c0; }
+    .tag-stock { background: #fce4ec; color: #880e4f; }
+    .tag-cash  { background: #f3e5f5; color: #6a1b9a; }
+
+    /* ── Positive / negative ── */
+    .pos { color: #2e7d32; }
+    .neg { color: #c62828; }
+
+    /* ── Transactions ── */
+    .tx-day { margin-bottom: 8px; }
+    .tx-day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 10px;
+      background: #f7f7f7;
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      user-select: none;
+    }
+    .tx-day-header:hover { background: #eeeeee; }
+    .tx-day-hint { font-size: 11px; color: #888; font-weight: 400; }
+    .tx-items { }
+    .tx-item {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 5px 10px;
+      border-bottom: 1px solid #f5f5f5;
+      font-size: 13px;
+    }
+    .tx-item:last-child { border-bottom: none; }
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      min-width: 36px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .badge-buy  { background: #e8f5e9; color: #2e7d32; }
+    .badge-sell { background: #ffebee; color: #c62828; }
+    .tx-sym  { font-weight: 600; min-width: 52px; }
+    .tx-qty  { color: #555; }
+    .tx-cat  { font-size: 11px; color: #aaa; }
+    .tx-net  { font-variant-numeric: tabular-nums; margin-left: auto; }
+    .tx-memo-toggle {
+      font-size: 11px;
+      color: #aaa;
+      cursor: pointer;
+      text-decoration: underline dotted;
+      flex-basis: 100%;
+      padding-left: 44px;
+    }
+    .tx-memo-text { flex-basis: 100%; font-size: 11px; color: #888; padding-left: 44px; }
+    .empty-state { color: #888; padding: 12px 0; font-size: 13px; }
+
+    /* ── Utility ── */
+    .hidden { display: none !important; }
+
+    @media (max-width: 680px) {
+      .chart-pair  { grid-template-columns: 1fr; }
+      .nav-sp-grid { grid-template-columns: 1fr; }
+      .kpi-grid    { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 3.0 Header -->
+<div class="page-header">
+  <div class="page-title" id="pg-title"></div>
+  <div class="page-meta"  id="pg-meta"></div>
+</div>
+
+<!-- 3.1 KPI Cards -->
+<div class="kpi-grid" id="kpi-grid"></div>
+
+<!-- 3.2 NAV vs Benchmark -->
+<div class="section">
+  <div class="section-title">
+    Net Value vs Benchmark
+    <span class="section-subtitle" id="nav-subtitle"></span>
+  </div>
+  <div id="nav-section"></div>
+</div>
+
+<!-- 3.3 Allocation -->
+<div class="section">
+  <div class="section-title">Allocation</div>
+  <div class="chart-pair">
+    <div>
+      <div class="chart-col-title">Actual Weight</div>
+      <div id="donut-chart" class="echart" style="height:340px"></div>
+    </div>
+    <div>
+      <div class="chart-col-title">Drift vs Baseline (pp)</div>
+      <div id="drift-chart" class="echart"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 3.4 Positions -->
+<div class="section">
+  <div class="section-title">Positions</div>
+  <div class="table-wrap" id="positions-wrap"></div>
+</div>
+
+<!-- 3.5 Transactions -->
+<div class="section">
+  <div class="section-title">Transactions</div>
+  <div id="tx-list"></div>
+</div>
+
+<script>
+(function () {
+'use strict';
+
+// ── Formatters ────────────────────────────────────────────────────────────────
+function fmtUSD(n) {
+  if (n == null) return '—';
+  return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function fmt2(n) {
+  if (n == null) return '—';
+  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function fmtPct(n) {
+  if (n == null) return '—';
+  var pct = n * 100;
+  var dp = Math.abs(pct) >= 1 ? 2 : Math.abs(pct) >= 0.01 ? 4 : 6;
+  return (n > 0 ? '+' : '') + pct.toFixed(dp) + '%';
+}
+function fmtPp(n) {
+  if (n == null) return '—';
+  return (n > 0 ? '+' : '') + n.toFixed(2) + ' pp';
+}
+function fmtW(n) {
+  if (n == null) return '—';
+  return (n * 100).toFixed(2) + '%';
+}
+function signCls(n) {
+  if (n == null) return '';
+  return n >= 0 ? 'pos' : 'neg';
+}
+function esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+function tag(type) {
+  return '<span class="tag tag-' + type.toLowerCase() + '">' + type + '</span>';
+}
+
+// ── Unpack data ───────────────────────────────────────────────────────────────
+var meta         = DATA.meta;
+var kpi          = DATA.kpi;
+var nav_series   = DATA.nav_series;
+var allocation   = DATA.allocation;
+var positions    = DATA.positions;
+var transactions = DATA.transactions;
+
+// ── Benchmark label (derived from strategy config, never hardcoded) ───────────
+var bm = meta.benchmark || {};
+var cashW = bm.cash_weight || 0;
+var benchLabel = cashW > 0
+  ? Math.round((1 - cashW) * 100) + '% ' + bm.symbol + ' + ' +
+    Math.round(cashW * 100) + '% cash'
+  : String(bm.symbol || 'Benchmark');
+var benchSeriesName = 'Benchmark (' + benchLabel + ')';
+
+var navSubtitle = document.getElementById('nav-subtitle');
+navSubtitle.textContent =
+  '· Benchmark: ' + benchLabel +
+  ' · adjusted-close total return · same inception & initial capital';
+if (bm.note) navSubtitle.title = bm.note;
+
+// ── 3.0 Header ────────────────────────────────────────────────────────────────
+document.getElementById('pg-title').textContent =
+  meta.strategy_name + ' Portfolio Dashboard';
+document.getElementById('pg-meta').innerHTML =
+  'As of <strong>' + esc(meta.as_of_date) + '</strong>' +
+  ' &nbsp;·&nbsp; Inception: ' + esc(meta.inception_date) +
+  ' &nbsp;·&nbsp; Currency: ' + esc(meta.base_currency) +
+  ' &nbsp;·&nbsp; Initial Capital: ' + fmtUSD(meta.initial_capital);
+
+// ── 3.1 KPI Cards ─────────────────────────────────────────────────────────────
+var cashRow    = (allocation.rows || []).find(function(r) { return r.symbol === 'CASH'; });
+var cashWeight = cashRow ? fmtW(cashRow.actual_weight) : '—';
+
+var kpiCards = [
+  {
+    label: 'Total Portfolio Value',
+    value: fmtUSD(kpi.total_portfolio_value),
+    sub: 'Positions: ' + fmtUSD(kpi.positions_market_value) +
+         ' &nbsp;/&nbsp; Cash: ' + fmtUSD(kpi.cash_balance),
+    cls: ''
+  },
+  {
+    label: 'Cash Balance',
+    value: fmtUSD(kpi.cash_balance),
+    sub: 'Cash weight: ' + cashWeight,
+    cls: ''
+  },
+  {
+    label: 'Cumulative Return',
+    value: fmtPct(kpi.cumulative_return),
+    sub: 'vs Inception (' + esc(meta.inception_date) + ')',
+    cls: signCls(kpi.cumulative_return)
+  },
+  {
+    label: 'Benchmark Return',
+    value: kpi.benchmark_return == null ? '—' : fmtPct(kpi.benchmark_return),
+    sub: benchLabel + ', adjusted-close total return' +
+         (kpi.benchmark_return == null ? ' (data unavailable)' : ''),
+    cls: signCls(kpi.benchmark_return)
+  },
+  {
+    label: 'Active Return',
+    value: kpi.active_return == null ? '—' : fmtPct(kpi.active_return),
+    sub: kpi.active_return == null
+      ? 'benchmark data unavailable'
+      : 'portfolio − benchmark',
+    cls: signCls(kpi.active_return)
+  },
+  {
+    label: 'Unrealized P&L',
+    value: fmtUSD(kpi.unrealized_pnl),
+    sub: 'Realized: ' + fmtUSD(kpi.realized_pnl),
+    cls: signCls(kpi.unrealized_pnl)
+  }
+];
+
+var grid = document.getElementById('kpi-grid');
+kpiCards.forEach(function(c) {
+  var div = document.createElement('div');
+  div.className = 'kpi-card';
+  div.innerHTML =
+    '<div class="kpi-label">' + esc(c.label) + '</div>' +
+    '<div class="kpi-value ' + c.cls + '">' + c.value + '</div>' +
+    '<div class="kpi-sub">' + c.sub + '</div>';
+  grid.appendChild(div);
+});
+
+// ── 3.2 NAV Section ───────────────────────────────────────────────────────────
+var navSec = document.getElementById('nav-section');
+var pts    = nav_series.points;
+
+// Derive equity curve: cumulative return % = (nav − 1) × 100
+var ecPts = pts.map(function(p) {
+  return {
+    date:      p.date,
+    portfolio: p.portfolio_nav != null ? (p.portfolio_nav - 1) * 100 : null,
+    benchmark: p.benchmark_nav != null ? (p.benchmark_nav - 1) * 100 : null
+  };
+});
+
+function fmtRetPct(v) {
+  if (v == null) return '—';
+  return (v >= 0 ? '+' : '') + v.toFixed(2) + '%';
+}
+
+var navEl = document.createElement('div');
+navEl.className = 'echart';
+navEl.style.height = '320px';
+navSec.appendChild(navEl);
+
+if (ecPts.length <= 3) {
+  // Sparse mode: scatter + notice text instead of line chart
+  var noticeEl = document.createElement('div');
+  noticeEl.className = 'nav-notice';
+  noticeEl.textContent = ecPts.length + ' weekly snapshot point' +
+    (ecPts.length > 1 ? 's' : '') +
+    ' so far — the chart switches to a line series as more snapshots accumulate.';
+  navSec.insertBefore(noticeEl, navEl);
+
+  var xData = ecPts.map(function(p) { return p.date; });
+
+  var scatterChart = echarts.init(navEl);
+  scatterChart.setOption({
+    tooltip: {
+      trigger: 'axis',
+      formatter: function(params) {
+        var lines = ['<b>' + (params[0] ? params[0].axisValue : '') + '</b>'];
+        var portVal = null, benchVal = null;
+        params.forEach(function(p) {
+          var v = Array.isArray(p.value) ? p.value[1] : p.value;
+          if (p.seriesName === 'Portfolio') portVal = v;
+          else benchVal = v;
+          lines.push(p.marker + p.seriesName + ': ' + fmtRetPct(v));
+        });
+        if (portVal != null && benchVal != null) {
+          var diff = portVal - benchVal;
+          lines.push('<span style="color:#888">Active: ' + (diff >= 0 ? '+' : '') + diff.toFixed(2) + ' pp</span>');
+        }
+        return lines.join('<br/>');
+      }
+    },
+    legend: { data: ['Portfolio', benchSeriesName], top: 0 },
+    xAxis: { type: 'category', data: xData },
+    yAxis: {
+      type: 'value',
+      scale: true,
+      axisLabel: { formatter: function(v) { return fmtRetPct(v); } }
+    },
+    series: [
+      {
+        name: 'Portfolio',
+        type: 'scatter',
+        data: ecPts.map(function(p) { return p.portfolio; }),
+        symbolSize: 10,
+        label: {
+          show: true, position: 'top',
+          formatter: function(p) { return fmtRetPct(p.value); }
+        }
+      },
+      {
+        name: benchSeriesName,
+        type: 'scatter',
+        data: ecPts.map(function(p) { return p.benchmark; }),
+        symbolSize: 10,
+        label: {
+          show: true, position: 'bottom',
+          formatter: function(p) { return fmtRetPct(p.value); }
+        }
+      }
+    ],
+    grid: { left: 80, right: 20, top: 40, bottom: 30 }
+  });
+} else {
+  // Line chart mode (≥4 points, time axis)
+  var portData  = ecPts.map(function(p) { return [p.date, p.portfolio]; });
+  var benchData = ecPts.map(function(p) { return [p.date, p.benchmark]; });
+
+  var lineChart = echarts.init(navEl);
+  lineChart.setOption({
+    tooltip: {
+      trigger: 'axis',
+      formatter: function(params) {
+        var date = params[0] ? (Array.isArray(params[0].value) ? params[0].value[0] : params[0].axisValue) : '';
+        var lines = ['<b>' + date + '</b>'];
+        var portVal = null, benchVal = null;
+        params.forEach(function(p) {
+          var v = Array.isArray(p.value) ? p.value[1] : p.value;
+          if (p.seriesName === 'Portfolio') portVal = v;
+          else benchVal = v;
+          lines.push(p.marker + p.seriesName + ': ' + fmtRetPct(v));
+        });
+        if (portVal != null && benchVal != null) {
+          var diff = portVal - benchVal;
+          lines.push('<span style="color:#888">Active: ' + (diff >= 0 ? '+' : '') + diff.toFixed(2) + ' pp</span>');
+        }
+        return lines.join('<br/>');
+      }
+    },
+    legend: { data: ['Portfolio', benchSeriesName], top: 0 },
+    xAxis: { type: 'time' },
+    yAxis: {
+      type: 'value',
+      scale: true,
+      axisLabel: { formatter: function(v) { return fmtRetPct(v); } }
+    },
+    series: [
+      {
+        name: 'Portfolio',
+        type: 'line',
+        data: portData,
+        smooth: false,
+        connectNulls: false,
+        symbol: 'none'
+      },
+      {
+        name: benchSeriesName,
+        type: 'line',
+        data: benchData,
+        smooth: false,
+        connectNulls: false,
+        symbol: 'none'
+      }
+    ],
+    grid: { left: 80, right: 20, top: 40, bottom: 30 }
+  });
+}
+
+// ── 3.3 Allocation ────────────────────────────────────────────────────────────
+var allocRows = allocation.rows || [];
+
+// Donut chart — only rows with actual_weight > 0
+var donutData = allocRows
+  .filter(function(r) { return r.actual_weight != null && r.actual_weight > 0; })
+  .map(function(r) {
+    return {
+      name: r.symbol,
+      value: parseFloat((r.actual_weight * 100).toFixed(4)),
+      _row: r
+    };
+  });
+
+var donutChart = echarts.init(document.getElementById('donut-chart'));
+donutChart.setOption({
+  tooltip: {
+    trigger: 'item',
+    formatter: function(p) {
+      var r = p.data._row;
+      return [
+        '<b>' + esc(r.symbol) + '</b>' + (r.role ? ' (' + esc(r.role) + ')' : ''),
+        'Actual: '   + fmtW(r.actual_weight),
+        'Baseline: ' + (r.baseline_weight != null ? fmtW(r.baseline_weight) : '—'),
+        'Drift: '    + fmtPp(r.drift_pp),
+        'Status: '   + esc(r.drift_status)
+      ].join('<br/>');
+    }
+  },
+  series: [{
+    type: 'pie',
+    radius: ['38%', '68%'],
+    label: { fontSize: 11, formatter: '{b}\n{d}%' },
+    labelLine: { length: 8, length2: 6 },
+    data: donutData,
+    emphasis: {
+      itemStyle: { shadowBlur: 8, shadowOffsetX: 0, shadowColor: 'rgba(0,0,0,0.2)' }
+    }
+  }],
+  legend: { show: false }
+});
+
+// Drift bar chart — sorted by |drift_pp| descending
+var sortedDrift = allocRows.slice().sort(function(a, b) {
+  return Math.abs(b.drift_pp || 0) - Math.abs(a.drift_pp || 0);
+});
+
+var driftColorMap = { ok: '#546e7a', review: '#ef6c00', breach: '#c62828', 'n/a': '#bdbdbd' };
+var driftBarData = sortedDrift.map(function(r) {
+  return {
+    value: r.drift_pp,
+    itemStyle: { color: driftColorMap[r.drift_status] || '#546e7a' },
+    _row: r
+  };
+});
+
+// Height: at least 24px per row, minimum 200px
+var driftHeight = Math.max(200, sortedDrift.length * 26 + 60);
+var driftEl = document.getElementById('drift-chart');
+driftEl.style.height = driftHeight + 'px';
+
+var driftChart = echarts.init(driftEl);
+driftChart.setOption({
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: { type: 'shadow' },
+    formatter: function(params) {
+      var r = params[0].data._row;
+      return [
+        '<b>' + esc(r.symbol) + '</b>' + (r.role ? ' (' + esc(r.role) + ')' : ''),
+        'Drift: '    + fmtPp(r.drift_pp),
+        'Actual: '   + fmtW(r.actual_weight),
+        'Baseline: ' + (r.baseline_weight != null ? fmtW(r.baseline_weight) : '—'),
+        'Review band: ±' + (r.review_band_pp != null ? r.review_band_pp + ' pp' : '—'),
+        'Hard band: ±'   + (r.hard_band_pp  != null ? r.hard_band_pp  + ' pp' : '—'),
+        'Status: ' + esc(r.drift_status)
+      ].join('<br/>');
+    }
+  },
+  xAxis: {
+    type: 'value',
+    axisLabel: { formatter: function(v) { return v + ' pp'; } }
+  },
+  yAxis: {
+    type: 'category',
+    data: sortedDrift.map(function(r) { return r.symbol; }),
+    inverse: true
+  },
+  series: [{
+    type: 'bar',
+    data: driftBarData,
+    label: {
+      show: true,
+      position: function(p) { return p.value >= 0 ? 'right' : 'left'; },
+      formatter: function(p) {
+        return p.data._row.drift_status === 'n/a' ? '—' : fmtPp(p.value);
+      },
+      fontSize: 11
+    }
+  }],
+  grid: { left: 56, right: 90, top: 10, bottom: 30 }
+});
+
+// ── 3.4 Positions Table ───────────────────────────────────────────────────────
+var posWrap = document.getElementById('positions-wrap');
+
+if (!positions.length) {
+  posWrap.innerHTML = '<p class="empty-state">No open positions.</p>';
+} else {
+  var sorted = positions.slice().sort(function(a, b) { return b.market_value - a.market_value; });
+  var totCost = positions.reduce(function(s, p) { return s + p.cost_basis; }, 0);
+  var totMv   = positions.reduce(function(s, p) { return s + p.market_value; }, 0);
+  var totUnr  = positions.reduce(function(s, p) { return s + p.unrealized_pnl; }, 0);
+
+  var rowsHtml = sorted.map(function(p) {
+    var stale = p.price_date < meta.as_of_date
+      ? '<span class="stale-label">⚠ stale (' + esc(p.price_date) + ')</span>' : '';
+    return '<tr>' +
+      '<td class="left">' + esc(p.symbol) + '</td>' +
+      '<td class="left">' + tag(p.asset_type) + '</td>' +
+      '<td>' + fmt2(p.quantity) + '</td>' +
+      '<td>' + fmtUSD(p.average_cost) + '</td>' +
+      '<td>' + fmtUSD(p.latest_price) + stale + '</td>' +
+      '<td>' + fmtUSD(p.cost_basis) + '</td>' +
+      '<td>' + fmtUSD(p.market_value) + '</td>' +
+      '<td>' + fmtW(p.actual_weight) + '</td>' +
+      '<td class="' + signCls(p.unrealized_pnl) + '">' + fmtUSD(p.unrealized_pnl) + '</td>' +
+      '<td class="' + signCls(p.realized_pnl)   + '">' + fmtUSD(p.realized_pnl)   + '</td>' +
+      '</tr>';
+  }).join('');
+
+  posWrap.innerHTML =
+    '<table>' +
+      '<thead><tr>' +
+        '<th class="left">Symbol</th>' +
+        '<th class="left">Type</th>' +
+        '<th>Qty</th>' +
+        '<th>Avg Cost</th>' +
+        '<th>Price</th>' +
+        '<th>Cost Basis</th>' +
+        '<th>Mkt Value</th>' +
+        '<th>Weight</th>' +
+        '<th>Unr. PnL</th>' +
+        '<th>Real. PnL</th>' +
+      '</tr></thead>' +
+      '<tbody>' + rowsHtml + '</tbody>' +
+      '<tfoot>' +
+        '<tr>' +
+          '<td class="left" colspan="5">Positions Total</td>' +
+          '<td>' + fmtUSD(totCost) + '</td>' +
+          '<td>' + fmtUSD(totMv)   + '</td>' +
+          '<td></td>' +
+          '<td class="' + signCls(totUnr) + '">' + fmtUSD(totUnr) + '</td>' +
+          '<td></td>' +
+        '</tr>' +
+        '<tr>' +
+          '<td class="left" colspan="5">+ Cash</td>' +
+          '<td></td>' +
+          '<td>' + fmtUSD(kpi.cash_balance) + '</td>' +
+          '<td>' + cashWeight + '</td>' +
+          '<td></td><td></td>' +
+        '</tr>' +
+        '<tr>' +
+          '<td class="left" colspan="5"><strong>Total Portfolio</strong></td>' +
+          '<td></td>' +
+          '<td><strong>' + fmtUSD(kpi.total_portfolio_value) + '</strong></td>' +
+          '<td></td><td></td><td></td>' +
+        '</tr>' +
+      '</tfoot>' +
+    '</table>';
+}
+
+// ── 3.5 Transactions Timeline ─────────────────────────────────────────────────
+var txList = document.getElementById('tx-list');
+
+if (!transactions.length) {
+  txList.innerHTML = '<p class="empty-state">No transactions recorded.</p>';
+} else {
+  // Group by date
+  var byDate = {};
+  var dateOrder = [];
+  transactions.forEach(function(tx) {
+    if (!byDate[tx.trade_date]) {
+      byDate[tx.trade_date] = [];
+      dateOrder.push(tx.trade_date);
+    }
+    byDate[tx.trade_date].push(tx);
+  });
+  dateOrder.sort();
+
+  dateOrder.forEach(function(date) {
+    var txs      = byDate[date];
+    var count    = txs.length;
+    var netCash  = txs.reduce(function(s, t) { return s + t.net_amount; }, 0);
+    var collapse = count >= 5;
+    var listId   = 'txd-' + date.replace(/-/g, '');
+
+    var itemsHtml = txs.map(function(t) {
+      var memoId   = 'txm-' + t.transaction_id;
+      var memoHtml = t.reason_memo
+        ? '<span class="tx-memo-toggle" onclick="toggleEl(\'' + memoId + '\')">' +
+          '[memo]</span>' +
+          '<span id="' + memoId + '" class="tx-memo-text hidden">' +
+          esc(t.reason_memo) + '</span>'
+        : '';
+      return '<div class="tx-item">' +
+        '<span class="badge badge-' + t.side.toLowerCase() + '">' + esc(t.side) + '</span>' +
+        '<span class="tx-sym">' + esc(t.symbol) + '</span>' +
+        '<span class="tx-qty">' + fmt2(t.quantity) + ' @ ' + fmtUSD(t.price) + '</span>' +
+        '<span class="tx-cat">' + (t.reason_category ? esc(t.reason_category) : '') + '</span>' +
+        '<span class="tx-net ' + signCls(t.net_amount) + '">' + fmtUSD(t.net_amount) + '</span>' +
+        memoHtml +
+        '</div>';
+    }).join('');
+
+    var dayDiv = document.createElement('div');
+    dayDiv.className = 'tx-day';
+    dayDiv.innerHTML =
+      '<div class="tx-day-header" onclick="toggleEl(\'' + listId + '\')">' +
+        '<span>' + esc(date) + ' — ' + count +
+          ' transaction' + (count > 1 ? 's' : '') + '</span>' +
+        '<span class="tx-day-hint ' + signCls(netCash) + '">' +
+          'Net cash: ' + fmtUSD(netCash) +
+          ' · click to toggle' +
+        '</span>' +
+      '</div>' +
+      '<div id="' + listId + '" class="tx-items' + (collapse ? ' hidden' : '') + '">' +
+        itemsHtml +
+      '</div>';
+    txList.appendChild(dayDiv);
+  });
+}
+
+// ── Toggle helper (called from inline onclick) ────────────────────────────────
+window.toggleEl = function(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('hidden');
+};
+
+})();
+</script>
+</body>
+</html>
